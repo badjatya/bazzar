@@ -5,8 +5,7 @@ import {Switch, Route} from "react-router-dom"
 const Hats = () => (
   <h1>Hats Page</h1>
 )
-
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Switch >
