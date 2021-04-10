@@ -4,7 +4,7 @@ import MenuItem from '../menu-item/menu-item.component'
 
 import "./directory.style.scss"
 
-export class Directory extends Component {
+class Directory extends Component {
 
     constructor(){
         super();
@@ -49,12 +49,10 @@ export class Directory extends Component {
 
     render() {
         return (
-            <div>
-                <div className="directory-menu">
-                    {this.state.sections.map(({title, id, linkUrl, size, imageUrl}) => (
-                        <MenuItem key={id} imageUrl={imageUrl} size={size} title={title} />
-                    ))}
-                </div>
+            <div className="directory-menu">
+                {this.state.sections.map(({title, id, linkUrl, size, imageUrl}) => (
+                    <MenuItem key={id} imageUrl={imageUrl} size={size} title={title} />
+                ))}
             </div>
         )
     }
