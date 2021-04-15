@@ -3,14 +3,14 @@ import "firebase/firestore"
 import "firebase/auth"
 
 const config = {
-    apiKey: "AIzaSyC3EeN00TTWJxyoMF3tjTC35e-eYCKSnUM",
-    authDomain: "bazzar-b19de.firebaseapp.com",
-    projectId: "bazzar-b19de",
-    storageBucket: "bazzar-b19de.appspot.com",
-    messagingSenderId: "186535351681",
-    appId: "1:186535351681:web:16ba522fd7ba746c9b4480",
-    measurementId: "G-LLDSTSDBFX"
-}
+    apiKey: "AIzaSyAyneSnm9AmgaSUZwf6FDu3GfNFsjnemj0",
+    authDomain: "bazzar-37b87.firebaseapp.com",
+    projectId: "bazzar-37b87",
+    storageBucket: "bazzar-37b87.appspot.com",
+    messagingSenderId: "100761839335",
+    appId: "1:100761839335:web:d55d469e9a0f626e9ea442",
+    measurementId: "G-BKPZW9RFVK"
+};
 
 firebase.initializeApp(config);
 
