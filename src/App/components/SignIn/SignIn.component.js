@@ -1,11 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
 
 // Importing Styles
 import "./SignIn.styles.scss";
 
-export class SignIn extends Component {
-  constructor() {
-    super();
+// Importing Components
+import FormInput from "./../Form-Input/Form-Input.component";
+import CustomButton from "../Custom-Button/CustomButton.component";
+
+class SignIn extends React.Component {
+  constructor(props) {
+    super(props);
 
     this.state = {
       email: "",
@@ -13,13 +17,15 @@ export class SignIn extends Component {
     };
   }
 
-  submitEventHandler = (event) => {
+  handleSubmit = (event) => {
     event.preventDefault();
+
     this.setState({ email: "", password: "" });
   };
 
   handleChange = (event) => {
-    const { value, name } = event;
+    const { value, name } = event.target;
+
     this.setState({ [name]: value });
   };
 
@@ -29,30 +35,27 @@ export class SignIn extends Component {
         <h2>I already have an account</h2>
         <span>Sign in with your email and password</span>
 
-        <form onSubmit={this.submitEventHandler}>
-          <input
-            type="email"
+        <form onSubmit={this.handleSubmit}>
+          <FormInput
             name="email"
+            type="email"
+            handleChange={this.handleChange}
             value={this.state.email}
-            onChange={this.handleChange}
+            label="email"
             required
           />
-          <label htmlFor="email">Email</label>
-
-          <input
-            type="password"
+          <FormInput
             name="password"
+            type="password"
             value={this.state.password}
-            onChange={this.handleChange}
+            handleChange={this.handleChange}
+            label="password"
             required
           />
-          <label htmlFor="password">Password</label>
-
-          <input type="submit" value="Submit Form" />
+          <CustomButton type="submit"> Sign in </CustomButton>
         </form>
       </div>
     );
   }
 }
-
 export default SignIn;
