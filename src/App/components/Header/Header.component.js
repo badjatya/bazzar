@@ -6,10 +6,13 @@ import { Link } from "react-router-dom";
 // Importing Logo
 import { ReactComponent as Logo } from "../../assets/img/logo.svg";
 
+// Importing Firebase auth
+import { auth } from "../../firebase/firebase.utils";
+
 // Importing Styles
 import "./Header.styles.scss";
 
-const Header = () => {
+const Header = ({ currentUser }) => {
   return (
     <div className="header">
       <Link to="/" className="logo-container">
@@ -23,6 +26,16 @@ const Header = () => {
         <Link to="/shop" className="option">
           CONTACT
         </Link>
+
+        {currentUser ? (
+          <div className="option" onClick={() => auth.signOut()}>
+            SIGN OUT
+          </div>
+        ) : (
+          <Link to="/signin" className="option">
+            SIGN IN
+          </Link>
+        )}
       </div>
     </div>
   );
