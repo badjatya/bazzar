@@ -7,14 +7,20 @@ import { Switch, Route } from "react-router-dom";
 import Homepage from "./App/pages/Homepage/Homepage";
 import ShopPage from "./App/pages/Shop/Shop.page";
 
+// Importing Components
+import Header from "./App/components/Header/Header.component";
+
 import "./App.css";
 
 const App = () => {
   return (
-    <Switch>
-      <Route path="/" component={Homepage} exact />
-      <Route path="/shop" component={ShopPage} />
-    </Switch>
+    <div>
+      <Header />
+      <Switch>
+        <Route path="/" component={Homepage} exact />
+        <Route path="/shop" component={ShopPage} />
+      </Switch>
+    </div>
   );
 };
 
