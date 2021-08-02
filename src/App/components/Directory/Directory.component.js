@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 // Importing Components
 import MenuItem from "./../Menu-Item/menu-item.component";
