@@ -12,10 +12,14 @@ import { auth } from "../../firebase/firebase.utils";
 // Importing redux state
 import { connect } from "react-redux";
 
+// Importing Components
+import CartIcon from "./../Cart-Icon/CartIcon.component";
+import CartDropdown from "./../Cart-Dropdown/CartDropdown.component";
+
 // Importing Styles
 import "./Header.styles.scss";
 
-const Header = ({ currentUser }) => {
+const Header = ({ currentUser, hidden }) => {
   return (
     <div className="header">
       <Link to="/" className="logo-container">
@@ -39,13 +43,17 @@ const Header = ({ currentUser }) => {
             SIGN IN
           </Link>
         )}
+
+        <CartIcon />
       </div>
+
+      {hidden ? null : <CartDropdown />}
     </div>
   );
 };
 
-const mapStateToProps = (state) => ({
-  currentUser: state.user.currentUser,
+const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
+  currentUser,
+  hidden,
 });
-
 export default connect(mapStateToProps)(Header);
