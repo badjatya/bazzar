@@ -21,7 +21,8 @@ import { setCurrentUser } from "./App/redux/user/user.action";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "./App/redux/user/user.selectors";
 
-import "./App.css";
+// Importing Global Style
+import GlobalStyle from "./globals.styles";
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
@@ -52,6 +53,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <GlobalStyle />
         <Header />
         <Switch>
           <Route exact path="/" component={Homepage} />
