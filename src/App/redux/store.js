@@ -10,7 +10,11 @@ import rootReducer from "./root-reducer";
 import { logger } from "redux-logger";
 
 // Storing middleware
-const middleware = [logger];
+const middleware = [];
+
+if (process.env.NODE_ENV === "development") {
+  middleware.push(logger);
+}
 
 // Creating redux store
 export const store = createStore(rootReducer, applyMiddleware(...middleware));
